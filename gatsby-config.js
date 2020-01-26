@@ -27,6 +27,17 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // 這個名字會直接對應到我們GraphQL server的query type
+        typeName: "BLOG",
+        // 讀取時用的field名稱
+        fieldName: "blog",
+        // URL to query from
+        url: "http://localhost:3000/graphql/",
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
