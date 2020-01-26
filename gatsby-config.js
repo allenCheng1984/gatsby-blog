@@ -28,7 +28,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
+    { // 使用 graphql 做 API 溝通
       resolve: "gatsby-source-graphql",
       options: {
         // 這個名字會直接對應到我們GraphQL server的query type
@@ -39,6 +39,15 @@ module.exports = {
         url: "http://localhost:3000/graphql/",
       },
     },
+    { // 可讀取 source 檔案
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/markdown-pages`,
+      },
+    },
+    // 將 markdown 檔案轉譯成 html
+    `gatsby-transformer-remark`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
