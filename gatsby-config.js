@@ -28,17 +28,6 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    { // 使用 graphql 做 API 溝通
-      resolve: "gatsby-source-graphql",
-      options: {
-        // 這個名字會直接對應到我們GraphQL server的query type
-        typeName: "BLOG",
-        // 讀取時用的field名稱
-        fieldName: "blog",
-        // URL to query from
-        url: "http://localhost:3000/graphql/",
-      },
-    },
     { // 可讀取 source 檔案
       resolve: `gatsby-source-filesystem`,
       options: {
